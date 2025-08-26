@@ -8,3 +8,4 @@ ENV GF_SECURITY_ADMIN_PASSWORD=admin
 EXPOSE 3000
 
 CMD ["grafana-server", "--homepath=/usr/share/grafana"]
+ENV GODEBUG=netdns=go
