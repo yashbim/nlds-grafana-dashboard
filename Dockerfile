@@ -1,11 +1,12 @@
 FROM grafana/grafana-oss:latest
 
-# Set admin credentials (change as needed)
-ENV GF_SECURITY_ADMIN_USER=admin
-ENV GF_SECURITY_ADMIN_PASSWORD=admin
+# Copy custom configuration if needed
+# COPY grafana.ini /etc/grafana/grafana.ini
 
-# Expose Grafana's default port
+# Set the user to grafana (default user)
+USER grafana
+
+# Expose the default Grafana port
 EXPOSE 3000
 
-CMD ["grafana-server", "--homepath=/usr/share/grafana"]
-ENV GODEBUG=netdns=go
+# The default CMD is already set in the base image
